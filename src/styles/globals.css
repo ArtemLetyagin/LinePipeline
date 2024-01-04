@@ -2,26 +2,294 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.mainer{
+  width: 100%;
+  background-color: black;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  display: flex;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.task{
+  width: 70%;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* <------- CONNECTIONS ------->*/
+.connections{
+  position: relative;
+  width: 30%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  gap: 1%;
+  overflow: hidden;
 }
+.connection_buttons{
+  width: 100%;
+  height: 15%;
+  display: flex;
+  gap: 3%;
+}
+
+.connection_buttons button{
+  width: 50%;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.connection_buttons button:nth-child(1){
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+.connection_buttons button:nth-child(2){
+  background-color: #85FFBD;
+  background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+}
+.connection_buttons button:nth-child(3){
+  background-color: #dd0000;
+}
+input[type="file"] {
+  display: none;
+}
+.build_line{
+  position: absolute;
+  width: 100%;
+  height: 81%;
+  top: 17.1%;
+  background-color: #bbbbbb;
+  border-radius: 10px;
+  overflow: hidden;
+  transform: translateX(100%);
+  transition: 0.5s;
+}
+
+.line_point{
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 10vh;
+  padding: 2vh;
+  gap: 5%;
+}
+.line_point div{
+  width: 6vh;
+  height: 100%;
+  background-color: white;
+  border-radius: 50%;
+}
+.line_point p{
+  font-size: 20px;
+}
+
+.line_point.new div{
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.my_lines{
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  background-color: #dddddd;
+  border-radius: 10px;
+  padding: 2%;
+  gap: 1%;
+}
+
+.my_line{
+  background-color: white;
+  height: 10vh;
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+}
+
+.my_line div.left{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.my_line div.right{
+  width: 20%;
+  padding: 5%;
+  background-color: red;
+}
+
+.my_line_sign{
+  height: 6vh;
+  padding: 1vh;
+  display: flex;
+}
+.my_line_sign div:nth-child(odd){
+  background-color: white;
+  width: 4vh;
+  height: 4vh;
+  border-radius: 5px;
+  border: 0.5vh solid black;
+}
+.my_line_sign div:nth-child(even){
+  background-color: black;
+  width: 3vh;
+  height: 0.5vh;
+  margin-top: 1.75vh;
+}
+/* <------- BLOCK ------->*/
+.block{
+  width: 100%;
+  height: 20vh;
+  background-color: #dddddd;
+  padding: 1%;
+  display: flex;
+  gap: 2%;
+  justify-content: center;
+}
+
+.block button{
+  position: absolute;
+  right: 2%;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 10%;
+  z-index: 101;
+  padding: 10px;
+}
+/* <------- ITEM ------->*/
+.item{
+  position: relative;
+  width: 20%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  transition: 0.3s;
+}
+
+.check_line{
+  background-color: rgb(249, 187, 63);
+}
+
+.item_editor{
+  float: right;
+  width: 20%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  gap: 5%;
+  transition: 0.3s;
+}
+.item_editor img{
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.item_editor img:hover{
+  background: rgba(255,0,0,0.5);
+}
+.item_editor div{
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+  background-color: #bbbbbb;
+  visibility: hidden;
+}
+.item_texts{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.item_texts div{
+  position: relative;
+  width: 100%;
+  display: table;
+  text-align: center;
+}
+
+.item_texts div:nth-child(1){
+  background-color: #8833fd;
+  height: 20%;
+}
+.item_texts div:nth-child(2){
+  height: 80%;
+}
+.item_texts span{
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-size: 15px;
+  transition: 0.2s;
+  display: table-cell;
+  vertical-align: middle;
+}
+.item_texts div:nth-child(1) span{
+  font-size: 20px;
+}
+.item_texts span:hover{
+  background-color: #02629a;
+}
+.item_texts span:focus{
+  outline: none !important;
+  background-color: #02629a;
+}
+
+
+/* <------- ADD ITEMS ------->*/
+.addLine{
+  position: absolute;
+  width: 100%;
+  height: 81%;
+  background-color: #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  gap: 1%;
+  top: 17%;
+  border-radius: 10px;
+  transition: 0.5s;
+  transform: translateX(95%);
+}
+
+.addLine div{
+  width: 100%;
+  height: 50px;
+  background-color: #dddddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+}
+.addLine div div:nth-child(1){
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+}
+.addLine div div:nth-child(2){
+  padding: 0px;
+  width: 50%;
+  height: 30px;
+  text-align: center;
+  background-color: white;
+}
+.addLine img{
+  width: 30px;
+  height: 30px;
+}
+
+
