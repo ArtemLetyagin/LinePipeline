@@ -59,6 +59,7 @@ class Liner{
     }
 
     endLineJSON(new_line){
+        console.log(new_line)
         this.line_creating = false;
         this.LINES.push(new_line);
         document.getElementById('my_lines').appendChild(this.addLineIcon())
