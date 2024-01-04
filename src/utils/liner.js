@@ -83,7 +83,7 @@ class Liner{
         }
         left_div.appendChild(p);
         left_div.appendChild(div_sign);
-
+        console.log(1)
         div.appendChild(left_div);
 
         let img = document.createElement('img');
